@@ -1,3 +1,6 @@
+#import "alias.typ": *
+
+
 = Lezione 01
 
 == Problema matematico, metodo numerico e condizionamento
@@ -35,14 +38,6 @@ L'analisi numerica studia e controlla gli errori 3 e 4.
 
 == Aritmetica floating point
 
-#let float(x) = {
-  let fop = math.class(
-    "unary",
-    $"float"$,
-  )
-  $fop(#x)$
-}
-
 L'insieme dei numeri macchina è l'insieme $ cal(F)(beta, t, L, U) = {sigma(.a_1 a_2 dots a_t)_beta beta^e } union {0} $ e con il simbolo $ float(x) in cal(F)(beta, t, L, U) $ il generico elemento dell'insieme, cioè il generico numero macchina.
 
 Abbiamo:
@@ -69,8 +64,6 @@ Distinguiamo i seguenti casi:
   - arrotondamento: $ sigma cases((.a_1 a_2 dots a_t)_beta beta^e "se" 0 lt.eq a_(t+1) < beta/2, (.a_1 a_2 dots a_t + 1)_beta beta^e "se" beta/2 gt.eq a_(t+1) lt.eq beta - 1) . $
 
 Si può dimostrare che l'errore commesso approssimando un numero reale $x$ con la sua rappresentazione macchina $float(x)$ è maggiorato da $ abs(frac(float(x) - x, x)) lt.eq k beta^(1-t) $ con $k=1$ per troncamento e $k=1/2$ per arrotondamento.
-
-#let eps = "eps"
 
 La quantità $ eps = k beta^(1-t) $ è detta precisione macchina nel fissato sistema floating point. La precisione si può caratterizzare come il più piccolo numero macchina per cui vale $ float(1 + eps) > 1 . $
 

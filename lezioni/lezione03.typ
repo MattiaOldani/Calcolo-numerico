@@ -1,3 +1,6 @@
+#import "alias.typ": *
+
+
 = Lezione 03
 
 == Determinante, inversa e rango di matrici
@@ -5,14 +8,6 @@
 Sia $A$ una matrice quadrata di ordine due, ovvero $ A = mat(a_11, a_12; a_21, a_22) . $ Si chiama determinante di $A$ il numero reale $ det(A) := a_11 a_22 - a_12 a_21 in RR . $
 
 Ora vediamo determinanti per matrici di ordine maggiore.
-
-#let compl(x) = {
-  let compop = math.class(
-    "unary",
-    $"compl"$,
-  )
-  $compop(#x)$
-}
 
 Siano $A$ matrice quadrata di ordine $n$ e $a_(i j)$ il generico elemento; si chiama complemento algebrico di $a_(i j)$ il numero reale $ compl(a_(i j)) := (-1)^(i+j) det(A_(i j)) , $ dove la matrice $A_(i j)$ è la matrice quadrata di ordine $n-1$ ottenuta da $A$ eliminando la riga $i$ e la colonna $j$.
 
@@ -31,14 +26,6 @@ Sia $A$ una matrice quadrata di ordine $n$, si dice che $A$ è invertibile se es
 Teorema: sia $A$ una matrice quadrata di ordine $n$, allora $A$ è invertibile se e solo se $det(A) eq.not 0$.
 
 Teorema: sia $A$ una matrice quadrata di ordine due, cioè $ A = mat(a_11, a_12; a_21, a_22) $ e supponiamo $det(A) eq.not 0$, allora $ A^(-1) = 1/det(A) mat(a_22, -a_12; -a_21, a_11) . $
-
-#let rank(x) = {
-  let rankop = math.class(
-    "unary",
-    $"rk"$,
-  )
-  $rankop(#x)$
-}
 
 Sia $A$ una matrice $m times n$ e $k in NN$ con $k lt.eq min(m,n)$. Si chiama minore di ordine $k$ estratto da $A$ il determinante di una qualunque sottomatrice quadrata di ordine $k$ di $A$, ottenuta prendendo gli elementi comuni a $k$ righe di $k$ colonne di $A$. Si chiama caratteristica o rango di $A$ ($rank(A)$) l'ordine massimo dei minori non nulli che si possono estrarre da $A$.
 
