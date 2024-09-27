@@ -27,3 +27,15 @@
   )
   $rankop(#x)$
 }
+
+// Lezione 07
+
+#let trace(x) = {
+  let traceop = math.class(
+    "unary",
+    $"tr"$,
+  )
+  $traceop(#x)$
+}
+
+#let toll = "toll"
