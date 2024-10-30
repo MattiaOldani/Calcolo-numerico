@@ -70,3 +70,6 @@
 // Laboratori
 
 #include "laboratori/laboratorio01.typ"
+#pagebreak()
+
+#include "laboratori/laboratorio02.typ"
