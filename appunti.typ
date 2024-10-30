@@ -66,3 +66,7 @@
 #pagebreak()
 
 #include "lezioni/lezione20.typ"
+
+// Laboratori
+
+#include "laboratori/laboratorio01.typ"
