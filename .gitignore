@@ -2,6 +2,6 @@
 .vscode/
 
 # Materiali
-laboratori/
+laboratori/**/*pdf
 lezioni_pdf/
 tde/
