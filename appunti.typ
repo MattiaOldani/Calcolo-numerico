@@ -85,3 +85,6 @@
 #pagebreak()
 
 #include "laboratori/laboratorio06.typ"
+#pagebreak()
+
+#include "laboratori/laboratorio07.typ"
