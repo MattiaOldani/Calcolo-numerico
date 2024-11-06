@@ -100,3 +100,6 @@
 #pagebreak()
 
 #include "laboratori/laboratorio11.typ"
+#pagebreak()
+
+#include "laboratori/laboratorio12.typ"
