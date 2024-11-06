@@ -18,6 +18,21 @@
 
   v(1.75em)
 
+  show figure.where(kind: "parte"): it => {
+    counter(heading).update(0)
+    set page(footer: {
+      set text(weight: "regular", size: 11pt)
+      counter(page).display()
+    })
+    if it.numbering != none {
+      set text(size: 20pt)
+      align(
+        center + horizon,
+        strong(it.supplement + [ ] + it.counter.display(it.numbering)) + [ --- ] + strong(it.body),
+      )
+    }
+  }
+
   show outline.entry: it => {
     if it.element.func() == figure {
       // https://github.com/typst/typst/issues/2461
@@ -44,7 +59,7 @@
     strong(it)
   }
 
-  let chapters-and-headings = heading.where(outlined: true)
+  let chapters-and-headings = figure.where(kind: "parte", outlined: true).or(heading.where(outlined: true))
 
   pagebreak()
 
@@ -54,3 +69,12 @@
 
   body
 }
+
+#let parte = figure.with(
+  kind: "parte",
+  numbering: none,
+  supplement: "Parte",
+  caption: [],
+)
+
+#let parte = parte.with(numbering: "I")
