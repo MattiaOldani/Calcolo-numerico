@@ -6,9 +6,11 @@
 #pagebreak()
 
 
-// Lezioni
+// Teoria
 
-#include "lezioni/lezione01.typ"
+#parte("Teoria")
+
+#include "capitoli/teoria/01_problemi_e_metodi_numerici.typ"
 #pagebreak()
 
 #include "lezioni/lezione02.typ"
