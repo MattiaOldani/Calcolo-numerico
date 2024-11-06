@@ -13,10 +13,7 @@
 #include "capitoli/teoria/01_problemi_e_metodi_numerici.typ"
 #pagebreak()
 
-#include "lezioni/lezione02.typ"
-#pagebreak()
-
-#include "lezioni/lezione03.typ"
+#include "capitoli/teoria/02_vettori_e_matrici.typ"
 #pagebreak()
 
 #include "lezioni/lezione04.typ"

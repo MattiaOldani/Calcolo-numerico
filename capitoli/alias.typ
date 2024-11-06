@@ -11,3 +11,21 @@
 }
 
 #let eps = "eps"
+
+// Matrici e vettori
+
+#let compl(x) = {
+  let compop = math.class(
+    "unary",
+    $"compl"$,
+  )
+  $compop(#x)$
+}
+
+#let rank(x) = {
+  let rankop = math.class(
+    "unary",
+    $"rk"$,
+  )
+  $rankop(#x)$
+}
