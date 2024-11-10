@@ -25,10 +25,7 @@
 #include "capitoli/teoria/05_integrazione_numerica.typ"
 #pagebreak()
 
-#include "lezioni/lezione15.typ"
-#pagebreak()
-
-#include "lezioni/lezione16.typ"
+#include "capitoli/teoria/06_zeri_di_funzione.typ"
 #pagebreak()
 
 #include "lezioni/lezione17.typ"
