@@ -22,10 +22,7 @@
 #include "capitoli/teoria/04_interpolazione_polinomiale.typ"
 #pagebreak()
 
-#include "lezioni/lezione13.typ"
-#pagebreak()
-
-#include "lezioni/lezione14.typ"
+#include "capitoli/teoria/05_integrazione_numerica.typ"
 #pagebreak()
 
 #include "lezioni/lezione15.typ"
