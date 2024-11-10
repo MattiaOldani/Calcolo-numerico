@@ -29,3 +29,15 @@
   )
   $rankop(#x)$
 }
+
+// Sistemi lineari
+
+#let trace(x) = {
+  let traceop = math.class(
+    "unary",
+    $"tr"$,
+  )
+  $traceop(#x)$
+}
+
+#let toll = "toll"

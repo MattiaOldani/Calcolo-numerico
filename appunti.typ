@@ -16,19 +16,7 @@
 #include "capitoli/teoria/02_vettori_e_matrici.typ"
 #pagebreak()
 
-#include "lezioni/lezione04.typ"
-#pagebreak()
-
-#include "lezioni/lezione05.typ"
-#pagebreak()
-
-#include "lezioni/lezione06.typ"
-#pagebreak()
-
-#include "lezioni/lezione07.typ"
-#pagebreak()
-
-#include "lezioni/lezione08.typ"
+#include "capitoli/teoria/03_sistemi_lineari.typ"
 #pagebreak()
 
 #include "lezioni/lezione09.typ"
