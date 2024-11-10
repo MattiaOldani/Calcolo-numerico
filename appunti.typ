@@ -19,16 +19,7 @@
 #include "capitoli/teoria/03_sistemi_lineari.typ"
 #pagebreak()
 
-#include "lezioni/lezione09.typ"
-#pagebreak()
-
-#include "lezioni/lezione10.typ"
-#pagebreak()
-
-#include "lezioni/lezione11.typ"
-#pagebreak()
-
-#include "lezioni/lezione12.typ"
+#include "capitoli/teoria/04_interpolazione_polinomiale.typ"
 #pagebreak()
 
 #include "lezioni/lezione13.typ"
