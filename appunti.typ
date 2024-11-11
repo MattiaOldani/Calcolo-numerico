@@ -51,7 +51,7 @@
 #include "capitoli/laboratorio/04_interpolazione_polinomiale.typ"
 #pagebreak()
 
-#include "laboratori/laboratorio09.typ"
+#include "capitoli/laboratorio/05_integrazione_numerica.typ"
 #pagebreak()
 
 #include "laboratori/laboratorio10.typ"
