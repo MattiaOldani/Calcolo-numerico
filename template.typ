@@ -21,8 +21,13 @@
   show figure.where(kind: "parte"): it => {
     counter(heading).update(0)
     set page(footer: {
+      // qui ci sono tutte le impostazioni del footer, ossia il piè di pagina
       set text(weight: "regular", size: 11pt)
-      counter(page).display()
+      // che come ogni box, cell o che per allineare basta usare align()
+      set align(center)
+      counter(page).display() // <-- questo è il content
+      // invece per avere un footer vuoto basta semplicemente non scrivere nulla,
+      // cioè solo set page(footer: {})
     })
     if it.numbering != none {
       set text(size: 20pt)
