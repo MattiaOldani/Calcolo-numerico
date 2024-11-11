@@ -42,10 +42,7 @@
 #include "capitoli/laboratorio/01_introduzione_a_matlab.typ"
 #pagebreak()
 
-#include "laboratori/laboratorio02.typ"
-#pagebreak()
-
-#include "laboratori/laboratorio03.typ"
+#include "capitoli/laboratorio/02_vettori_e_matrici.typ"
 #pagebreak()
 
 #include "laboratori/laboratorio04.typ"

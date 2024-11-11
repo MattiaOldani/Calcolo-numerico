@@ -30,6 +30,14 @@
   $rankop(#x)$
 }
 
+#let length(x) = {
+  let lengthop = math.class(
+    "unary",
+    $"length"$,
+  )
+  $lengthop(#x)$
+}
+
 // Sistemi lineari
 
 #let trace(x) = {
