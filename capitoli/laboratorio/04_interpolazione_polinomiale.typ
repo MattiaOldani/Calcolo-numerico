@@ -1,3 +1,7 @@
+// Setup
+
+// Capitolo
+
 = Interpolazione polinomiale
 
 == Lavorare con i polinomi
