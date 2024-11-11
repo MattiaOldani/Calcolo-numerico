@@ -45,10 +45,7 @@
 #include "capitoli/laboratorio/02_vettori_e_matrici.typ"
 #pagebreak()
 
-#include "laboratori/laboratorio04.typ"
-#pagebreak()
-
-#include "laboratori/laboratorio05.typ"
+#include "capitoli/laboratorio/03_sistemi_lineari.typ"
 #pagebreak()
 
 #include "laboratori/laboratorio07.typ"
