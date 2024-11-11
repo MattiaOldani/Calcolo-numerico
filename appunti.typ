@@ -1,4 +1,5 @@
 // Titolo e indice
+
 #import "template.typ": *
 
 #show: project.with(title: "Calcolo numerico")
@@ -31,12 +32,12 @@
 #include "capitoli/teoria/07_equazioni_differenziali_ordinarie.typ"
 #pagebreak()
 
-#include "lezioni/lezione19.typ"
+#include "capitoli/teoria/08_sistemi_di_equazioni_differenziali_ordinarie.typ"
 #pagebreak()
 
-#include "lezioni/lezione20.typ"
-
 // Laboratori
+
+#parte("Laboratorio")
 
 #include "laboratori/laboratorio01.typ"
 #pagebreak()
