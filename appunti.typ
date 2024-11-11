@@ -57,7 +57,7 @@
 #include "capitoli/laboratorio/06_zeri_di_funzione.typ"
 #pagebreak()
 
-#include "laboratori/laboratorio11.typ"
+#include "capitoli/laboratorio/07_equazioni_differenziali_ordinarie.typ"
 #pagebreak()
 
 #include "laboratori/laboratorio12.typ"
