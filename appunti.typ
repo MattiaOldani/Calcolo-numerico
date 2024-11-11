@@ -28,10 +28,7 @@
 #include "capitoli/teoria/06_zeri_di_funzione.typ"
 #pagebreak()
 
-#include "lezioni/lezione17.typ"
-#pagebreak()
-
-#include "lezioni/lezione18.typ"
+#include "capitoli/teoria/07_equazioni_differenziali_ordinarie.typ"
 #pagebreak()
 
 #include "lezioni/lezione19.typ"
