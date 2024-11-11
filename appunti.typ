@@ -48,10 +48,7 @@
 #include "capitoli/laboratorio/03_sistemi_lineari.typ"
 #pagebreak()
 
-#include "laboratori/laboratorio07.typ"
-#pagebreak()
-
-#include "laboratori/laboratorio08.typ"
+#include "capitoli/laboratorio/04_interpolazione_polinomiale.typ"
 #pagebreak()
 
 #include "laboratori/laboratorio09.typ"
