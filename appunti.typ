@@ -54,7 +54,7 @@
 #include "capitoli/laboratorio/05_integrazione_numerica.typ"
 #pagebreak()
 
-#include "laboratori/laboratorio10.typ"
+#include "capitoli/laboratorio/06_zeri_di_funzione.typ"
 #pagebreak()
 
 #include "laboratori/laboratorio11.typ"
