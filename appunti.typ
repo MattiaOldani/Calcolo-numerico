@@ -35,11 +35,11 @@
 #include "capitoli/teoria/08_sistemi_di_equazioni_differenziali_ordinarie.typ"
 #pagebreak()
 
-// Laboratori
+// Laboratorio
 
 #parte("Laboratorio")
 
-#include "laboratori/laboratorio01.typ"
+#include "capitoli/laboratorio/01_introduzione_a_matlab.typ"
 #pagebreak()
 
 #include "laboratori/laboratorio02.typ"
@@ -52,9 +52,6 @@
 #pagebreak()
 
 #include "laboratori/laboratorio05.typ"
-#pagebreak()
-
-#include "laboratori/laboratorio06.typ"
 #pagebreak()
 
 #include "laboratori/laboratorio07.typ"
