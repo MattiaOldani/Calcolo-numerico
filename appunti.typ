@@ -60,4 +60,4 @@
 #include "capitoli/laboratorio/07_equazioni_differenziali_ordinarie.typ"
 #pagebreak()
 
-#include "laboratori/laboratorio12.typ"
+#include "capitoli/laboratorio/08_sistemi_di_equazioni_differenziali_ordinarie.typ"
