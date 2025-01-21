@@ -1,5 +1,8 @@
 // Setup
 
+#import "@local/typst-theorems:1.0.0": *
+#show: thmrules.with(qed-symbol: $square.filled$)
+
 // Capitolo
 
 = Metodi numerici per equazioni differenziali ordinarie
@@ -18,13 +21,13 @@ Un metodo numerico per l'approssimazione del problema di Cauchy è un algoritmo 
 
 Un metodo numerico per l'approssimazione di Cauchy è detto *metodo ad un passo* se $forall n gt.eq 0$ allora $u_(n+1)$ dipende solo da $u_n$ e non da $u_j$, per $j < n$. In caso contrario il metodo è detto *multistep*.
 
-Un metodo numerico per l'approssimazione di Cauchy è detto *esplicito* se $forall n gt.eq 0$ allora $u_(n+1)$ si calcola come funzione dei passi precedenti $u_j$ per $j lt.eq n$. In caso contrario il metodo è detto *implicito*, ovvero se $forall n gt.eq 0$ allora $u_(n+1)$ dipende implicitamente da se stesso attraverso la funzione $f$.
+Un metodo numerico per l'approssimazione di Cauchy è detto *esplicito* se $forall n gt.eq 0 space u_(n+1)$ si calcola come funzione dei passi precedenti $u_j$ per $j lt.eq n$. In caso contrario il metodo è detto *implicito*, ovvero se $forall n gt.eq 0 space u_(n+1)$ dipende implicitamente da se stesso attraverso la funzione $f$.
 
 == Metodo di Eulero
 
 Abbiamo due versioni per il *metodo di Eulero*:
 - *esplicito*: posto $u_0 = y_0$ allora $ forall n gt.eq 0 quad u_(n+1) = u_n + h f(t_n, u_n) ; $
-- *implicito*: posto $u_0 = y_0$ allora $ forall n gt.eq 0 quad u_(n+1) = u_n + h t(t_(n+1), u_(n+1)) . $
+- *implicito*: posto $u_0 = y_0$ allora $ forall n gt.eq 0 quad u_(n+1) = u_n + h f(t_(n+1), u_(n+1)) . $
 
 Nel caso di Eulero implicito ad ogni passo dobbiamo risolvere un'equazione non lineare, ad esempio tramite il metodo di Newton.
 
@@ -56,7 +59,9 @@ Un metodo numerico è detto *zero-stabile* se, in un dato intervallo limitato $(
 
 Un metodo numerico è detto *convergente di ordine* $p$ se $ exists C > 0 bar.v abs(u_n - y_n) lt.eq C h^p quad 0 lt.eq n lt.eq N . $
 
-*Teorema*: un metodo numerico è convergente se e solo se è consistente e zero-stabile.
+#theorem()[
+  Un metodo numerico è convergente se e solo se è consistente e zero-stabile.
+]
 
 Consideriamo ora il problema modello $ cases(frac(d y(t), d t) = - lambda y(t) quad t in (0, infinity) quad lambda > 0, y(0) = 1) $ la cui soluzione esatta è $y(t) = e^(-lambda t)$.
 

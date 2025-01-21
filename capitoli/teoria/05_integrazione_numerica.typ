@@ -1,5 +1,8 @@
 // Setup
 
+#import "@local/typst-theorems:1.0.0": *
+#show: thmrules.with(qed-symbol: $square.filled$)
+
 // Capitolo
 
 = Integrazione numerica
@@ -12,9 +15,11 @@ Si chiama *formula di quadratura* una formula del tipo $ I^tilde (f) = sum_(i=1)
 
 Per costruire formule di quadratura possiamo approssimare l'integrale $I(f)$ con l'integrale di un polinomio $P$ che interpola la funzione $f$ in un determinato insieme di nodi nell'intervallo $[a,b]$, cioè $ I(f) approx I^tilde (f) := I(P) = integral_a^b P(x) d x . $ Al variare del numero di nodi di interpolazione e della loro posizione avremo diverse formule di quadratura, dette *di tipo interpolatorio*.
 
-Si chiama *grado di precisione* di una formula di quadratura il massimo intero $r gt.eq 0$ tale che $I^tilde (P) = I(P) quad forall P in PP_r$.
+Si chiama *grado di precisione* di una formula di quadratura il massimo intero $r gt.eq 0$ tale che $ I^tilde (P) = I(P) quad forall P in PP_r . $
 
-*Proposizione*: una formula di quadratura ha grado di precisione $r$ se e solo se $ I^tilde (x^k) = I(x^k) quad forall k = 0, dots, r . $
+#lemma()[
+  Una formula di quadratura ha grado di precisione $r$ se e solo se $ I^tilde (x^k) = I(x^k) quad forall k = 0, dots, r . $
+]
 
 === Formula del punto medio
 

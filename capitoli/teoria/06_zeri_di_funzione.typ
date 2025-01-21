@@ -2,17 +2,20 @@
 
 #import "../alias.typ": *
 
+#import "@local/typst-theorems:1.0.0": *
+#show: thmrules.with(qed-symbol: $square.filled$)
+
 // Capitolo
 
 = Zeri di funzione
 
-Data una funzione $f : [a,b] arrow.long RR$ continua e tale che $f(a) f(b) < 0$, vogliamo trovare $alpha in (a,b)$ tale che $f(alpha) = 0$.
-
-In generale il valore $alpha$ non riusciamo a calcolarlo per via analitica (_esempio: equazioni non lineari_), ma possiamo solo approssimarlo numericamente.
+Data una funzione $f : [a,b] arrow.long RR$ continua e tale che $f(a) f(b) < 0$, vogliamo trovare $alpha in (a,b)$ tale che $f(alpha) = 0$. In generale il valore $alpha$ non riusciamo a calcolarlo per via analitica (_esempio: equazioni non lineari_), ma possiamo solo approssimarlo numericamente.
 
 == Teorema degli zeri
 
-*Teorema degli zeri*: sia $f : [a,b] arrow.long RR$ continua in $[a,b]$ e tale che $f(a) f(b) < 0$. Allora esiste $alpha in (a,b)$ tale che $f(alpha) = 0$.
+#theorem([Teorema degli zeri])[
+  Sia $f : [a,b] arrow.long RR$ continua in $[a,b]$ e tale che $ f(a) f(b) < 0 . $ Allora esiste $alpha in (a,b)$ tale che $ f(alpha) = 0 . $
+]
 
 I metodi numerici per la ricerca degli zeri sono in generale iterativi, quindi costruiremo una serie di valori $x_k$ con la speranza che $ lim_(k arrow infinity) x_k = alpha . $
 
@@ -69,14 +72,16 @@ Ma allora $ x f'(x_(k - 1)) - x_(k - 1) f'(x_(k - 1)) = -f(x_(k - 1)) \ x f'(x_(
   [La convergenza dipende dalla scelta di $x_0$: se esso non è sufficientemente vicino ad $alpha$ il metodo può non convergere],
 )
 
-*Teorema*: supponiamo
-- $f in C^2 ([a,b])$ (_regolarità_);
-- $f'(x) eq.not 0 quad forall x in [a,b]$ (_monotonia stretta_);
-- $f''(x) eq.not 0 quad forall x in [a,b]$ (_non cambia convessità_).
+#theorem()[
+  Supponiamo
+  - $f in C^2 ([a,b])$ (_regolarità_);
+  - $f'(x) eq.not 0 quad forall x in [a,b]$ (_monotonia stretta_);
+  - $f''(x) eq.not 0 quad forall x in [a,b]$ (_non cambia convessità_).
 
-Chiamiamo *estremo di Fourier* $x_0$ l'unico punto tra $a$ e $b$ tale che $ f(x_0) f''(x_0) > 0 . $
+  Chiamiamo *estremo di Fourier* $x_0$ l'unico punto tra $a$ e $b$ tale che $ f(x_0) f''(x_0) > 0 . $
 
-Allora il metodo di Newton, innescato con dato iniziale $x_0$ estremo di Fourier, è convergente con convergenza quadratica.
+  Allora il metodo di Newton, innescato con dato iniziale $x_0$ estremo di Fourier, è convergente con convergenza quadratica.
+]
 
 Come *test d'arresto* abbiamo due possibilità:
 - *test del residuo*: fissata una tolleranza $toll << 1$, arrestiamo il metodo iterativo se $ frac(abs(f(x_k)), abs(f(x_0))) < toll ; $

@@ -2,6 +2,9 @@
 
 #import "../alias.typ": *
 
+#import "@local/typst-theorems:1.0.0": *
+#show: thmrules.with(qed-symbol: $square.filled$)
+
 // Capitolo
 
 = Vettori e matrici
@@ -28,7 +31,7 @@ Geometricamente parlando, il vettore somma è la diagonale del parallelogramma a
 La somma di vettori gode di alcune proprietà:
 - *commutativa*: $forall a,b in RR^n quad a + b = b + a$;
 - *associativa*: $forall a,b,c in RR^n quad (a + b) + c = a + (b + c)$;
-- *esistenza del neutro*: il vettore $0 = vec(0, dots.v, 0)$ è l'*elemento neutro* della somma, cioè $forall a in RR^n quad a + 0 = 0 + a = a$;
+- *esistenza del neutro*: il vettore $ 0 = vec(0, dots.v, 0) $ è l'*elemento neutro* della somma, cioè $forall a in RR^n quad a + 0 = 0 + a = a$;
 - *esistenza dell'opposto*: per ogni vettore $a in RR^n$ esiste un altro vettore $b in RR^n$ tale che $a + b = 0$; tale vettore $b$ viene detto *vettore opposto* di $a$ e si indica con $-a$.
 
 Siano $a = (a_i) in RR^n$ un vettore e $beta in RR$ uno scalare. Chiamiamo *prodotto vettore-scalare* il vettore $c = (c_i) in RR^n$ tale che $ c_i = beta a_i forall i = 1, dots, n . $
@@ -55,7 +58,7 @@ Una matrice si dice *quadrata* di ordine $n$ se $m = n$. Una matrice quadrata è
 
 Se valgono entrambe le definizioni di triangolare la matrice è detta *diagonale*.
 
-Data la matrice $A = (a_(i j)) in RR^(m times n)$, chiamiamo *matrice trasposta* la matrice $A^T = (a_(i j)^T) in RR^(n times m)$ ottenuta dallo scambio delle righe e delle colonne di $A$, ovvero $ a_(i j) = a_(j i)^T $
+Data la matrice $A = (a_(i j)) in RR^(m times n)$, chiamiamo *matrice trasposta* la matrice $A^T = (a_(i j)^T) in RR^(n times m)$ ottenuta dallo scambio delle righe e delle colonne di $A$, ovvero $ a_(i j) = a_(j i)^T . $
 
 Sia $A$ una matrice quadrata di ordine $n$, essa si dice *simmetrica* se $A = A^T$, ovvero $a_(i j) = a_(j i) quad forall i,j = 1, dots, n$.
 
@@ -66,7 +69,7 @@ Siano $A = (a_(i j)), B = (b_(i j)) in RR^(m times n)$ due matrici. Chiamiamo *m
 Anche la somma di matrici gode di alcune proprietà:
 - *commutativa*: $forall A,B in RR^(m times n) quad A + B = B + A$;
 - *associativa*: $forall A,B,C in RR^(m times n) quad (A + B) + C = A + (B + C)$;
-- *esistenza del neutro*: la matrice $0 = mat(0, dots, 0; dots.v, dots.down, dots.v; 0, dots, 0)$ è l'*elemento neutro* della somma, cioè $forall A in RR^(m times n) quad A + 0 = 0 + A = A$;
+- *esistenza del neutro*: la matrice $ 0 = mat(0, dots, 0; dots.v, dots.down, dots.v; 0, dots, 0) $ è l'*elemento neutro* della somma, cioè $forall A in RR^(m times n) quad A + 0 = 0 + A = A$;
 - *esistenza dell'opposto*: per ogni matrice $A in RR^n$ esiste un'altra matrice $B in RR^(m times n)$ tale che $A + B = 0$; tale matrice $B$ viene detta *matrice opposta* di $A$ e si indica con $-A$.
 
 Siano $A = (a_(i j)) in RR^(m times n)$ una matrice e $beta in RR$ uno scalare. Chiamiamo *prodotto matrice-scalare* la matrice $C = (c_(i j)) in RR^(m times n)$ tale che $ c_(i j) = beta a_(i j) quad forall i = 1, dots, m quad forall j = 1, dots, n . $
@@ -117,11 +120,13 @@ Il determinante gode di alcune proprietà:
 
 Sia $A$ una matrice quadrata di ordine $n$. Si dice che $A$ è *invertibile* se esiste una matrice $A^(-1)$ detta *matrice inversa* di $A$, quadrata di ordine $n$, tale che $A dot A^(-1) = A^(-1) dot A = I_n$.
 
-// TODO
-*Teorema di invertibilità*: sia $A$ una matrice quadrata di ordine $n$, allora $A$ è invertibile se e solo se $det(A) eq.not 0$.
+#theorem([Teorema di invertibilità])[
+  Sia $A$ una matrice quadrata di ordine $n$, allora $A$ è invertibile se e solo se $ det(A) eq.not 0 . $
+]
 
-// TODO
-*Teorema*: sia $A$ una matrice quadrata di ordine due, cioè $ A = mat(a_11, a_12; a_21, a_22) $ e supponiamo $det(A) eq.not 0$. Allora $ A^(-1) = 1/det(A) mat(a_22, -a_12; -a_21, a_11) . $
+#theorem()[
+  Sia $A$ una matrice quadrata di ordine due, cioè $ A = mat(a_11, a_12; a_21, a_22) $ e supponiamo $det(A) eq.not 0$. Allora $ A^(-1) = 1/det(A) mat(a_22, -a_12; -a_21, a_11) . $
+]
 
 Sia $A$ una matrice $m times n$ e $k in NN$ con $k lt.eq min(m,n)$. Si chiama *minore* di ordine $k$ estratto da $A$ il determinante di una qualunque sottomatrice quadrata di ordine $k$ di $A$, ottenuta prendendo gli elementi comuni a $k$ righe di $k$ colonne di $A$. Si chiama *caratteristica o rango* di $A$ ($rank(A)$) l'ordine massimo dei minori non nulli che si possono estrarre da $A$.
 

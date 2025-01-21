@@ -2,6 +2,9 @@
 
 #import "../alias.typ": *
 
+#import "@local/typst-theorems:1.0.0": *
+#show: thmrules.with(qed-symbol: $square.filled$)
+
 // Capitolo
 
 = Sistemi lineari
@@ -23,11 +26,15 @@ Abbiamo tre possibili condizioni:
 - *sistema possibile determinato*: il sistema ammette una e una sola soluzione;
 - *sistema possibile indeterminato*: il sistema ammette infinite soluzioni.
 
-*Teorema di Cramer*: siano $A$ una matrice quadrata di ordine $n$ e $b in RR^n$, allora il sistema lineare $A x = b$ ammette una e una sola soluzione se e solo se $det(A) eq.not 0$.
+#theorem([Teorema di Cramer])[
+  Siano $A$ una matrice quadrata di ordine $n$ e $b in RR^n$, allora il sistema lineare $A x = b$ ammette una e una sola soluzione se e solo se $ det(A) eq.not 0 . $
+]
 
 Se il determinante è uguale a $0$ potremmo avere sia sistema impossibile sia sistema possibile indeterminato.
 
-*Teorema di Rouché-Capelli*: siano $A$ una matrice $m times n$ e $b in RR^m$, allora il sistema lineare $A x = b$ ammette soluzione se e solo se $ rank(A) = rank(A bar.v b) . $
+#theorem([Rouché-Capelli])[
+  Siano $A$ una matrice $m times n$ e $b in RR^m$, allora il sistema lineare $A x = b$ ammette soluzione se e solo se $ rank(A) = rank(A bar.v b) . $
+]
 
 Osserviamo che se $rank(A) = rank(A bar.v b)$, chiamato $r = rank(A)$ possiamo avere:
 - $r = n$ e quindi il sistema ammette una e una sola soluzione;
@@ -83,9 +90,13 @@ L'algoritmo di fattorizzazione segue i seguenti passi:
 
 Una matrice simmetrica $A in RR^(n times n)$ si dice *definita positiva* se $ A x dot x gt.eq 0 forall x in RR^n $ e $ A x dot x = 0 arrow.long.double.l.r x = 0 . $
 
-*Criterio di Sylvester*: una matrice $A$ simmetrica di ordine $n$ è definita positiva se e solo se $ det(A_k) > 0 quad k = 1, dots, n $ con $A_k$ sottomatrice principale di ordine $k$ formata dalle prime $k$ righe e colonne.
+#lemma([Criterio di Sylvester])[
+  Una matrice $A$ simmetrica di ordine $n$ è definita positiva se e solo se $ det(A_k) > 0 quad k = 1, dots, n $ con $A_k$ sottomatrice principale di ordine $k$ formata dalle prime $k$ righe e colonne.
+]
 
-*Teorema*: sia $A in RR^(n times n)$ simmetrica definita positiva. Allora esiste una matrice $R in RR^(n times n)$ triangolare superiore tale che $ A = R^T R . $
+#theorem()[
+  Sia $A in RR^(n times n)$ simmetrica definita positiva. Allora esiste una matrice $R in RR^(n times n)$ triangolare superiore tale che $ A = R^T R . $
+]
 
 Tale fattorizzazione della matrice $A$ è detta *fattorizzazione di Cholesky*.
 
@@ -103,7 +114,9 @@ Sia $A$ una matrice quadrata di ordine $n$. Il numero $lambda in CC$ è detto *a
 
 Il vettore è detto *autovettore* associato all'autovalore $lambda$. L'insieme $sigma(A)$ degli autovalori di $A$ è detto *spettro* di $A$.
 
-*Proposizione*: l'autovalore $lambda$ è soluzione dell'equazione caratteristica $ p_A (lambda) := det(A - lambda I) = 0 , $ dove $p_A (lambda)$ è detto *polinomio caratteristico*.
+#lemma()[
+  L'autovalore $lambda$ è soluzione dell'equazione caratteristica $ p_A (lambda) := det(A - lambda I) = 0 , $ dove $p_A (lambda)$ è detto *polinomio caratteristico*.
+]
 
 Dal teorema fondamentale dell'algebra segue che una matrice di ordine $n$ ha $n$ autovalori.
 
@@ -115,7 +128,9 @@ Vediamo alcune proprietà:
 
 Sia $A$ una matrice quadrata di ordine $n$, si chiama *raggio spettrale* di $A$ ($rho(A)$) il massimo valore assoluto degli autovalori di $A$, ovvero $ rho(A) := max_(i = 1, dots, n) abs(lambda_i (A)) . $
 
-*Proposizione*: sia $A$ una matrice quadrata di ordine $n$, allora $ norm(A)_2 = sqrt(rho(A^T A)) . $
+#lemma()[
+  Sia $A$ una matrice quadrata di ordine $n$, allora $ norm(A)_2 = sqrt(rho(A^T A)) . $
+]
 
 Siano $A$ una matrice quadrata di ordine $n$ non singolare e $norm(dot)$ una generica norma di matrice; si chiama *numero di condizionamento* della matrice $A$, e si indica con $K(A)$, la quantità scalare $ K(A) = norm(A) dot norm(A^(-1)) . $
 
@@ -129,7 +144,9 @@ Un *metodo iterativo* per la risoluzione del sistema lineare $A x = b$ consiste 
 
 In generale, un metodo iterativo per la risoluzione del sistema lineare $A x = b$ ha la forma $ x^((k+1)) = B x^((k)) + g $ con $B in RR^(n times n)$ *matrice di iterazione* e $g in RR^n$.
 
-*Teorema di convergenza*: un metodo iterativo nella forma descritta è convergente, cioè $lim_(k arrow infinity) x^((k)) = x$, se e solo se $ rho(B) < 1 , $ dove $rho(B)$ è il raggio spettrale della matrice $B$.
+#theorem([Teorema di convergenza])[
+  Un metodo iterativo nella forma descritta è convergente, cioè $ lim_(k arrow infinity) x^((k)) = x , $ se e solo se $ rho(B) < 1 , $ dove $rho(B)$ è il raggio spettrale della matrice $B$.
+]
 
 === Metodo di Jacobi
 
@@ -168,9 +185,13 @@ Se inseriamo la condizione $a_(i i) eq.not 0$ assicuriamo che il metodo si possa
 
 Sia $A$ una matrice quadrata di ordine $n$, allora essa è a *dominanza diagonale stretta per righe* se $ abs(a_(i i)) > sum_(j=1 and j eq.not i)^n abs(a_(i j)) quad forall i = 1, dots, n . $
 
-*Teorema*: sia $A in RR^(n times n)$ matrice a dominanza diagonale stretta per righe, allora i metodi di Jacobi e Gauss-Seidel applicati al sistema lineare $A x = b$ sono convergenti.
+#theorem()[
+  Sia $A in RR^(n times n)$ matrice a dominanza diagonale stretta per righe, allora i metodi di Jacobi e Gauss-Seidel applicati al sistema lineare $A x = b$ sono convergenti.
+]
 
-*Teorema*: sia $A in RR^(n times n)$ una matrice simmetrica definita positiva, allora il metodo di Gauss-Seidel converge.
+#theorem()[
+  Sia $A in RR^(n times n)$ una matrice simmetrica definita positiva, allora il metodo di Gauss-Seidel converge.
+]
 
 === Test d'arresto
 
