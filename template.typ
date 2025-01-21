@@ -12,23 +12,21 @@
 
   set page(numbering: "1")
 
-  align(center)[
-    #block(text(weight: 700, 1.75em, title))
+  align(center + horizon)[
+    #block(text(weight: 700, 3em, title))
   ]
 
-  v(1.75em)
+  pagebreak()
 
   show figure.where(kind: "parte"): it => {
     counter(heading).update(0)
-    set page(footer: {
-      // qui ci sono tutte le impostazioni del footer, ossia il piè di pagina
-      set text(weight: "regular", size: 11pt)
-      // che come ogni box, cell o che per allineare basta usare align()
-      set align(center)
-      counter(page).display() // <-- questo è il content
-      // invece per avere un footer vuoto basta semplicemente non scrivere nulla,
-      // cioè solo set page(footer: {})
-    })
+    set page(
+      footer: {
+        set text(weight: "regular", size: 11pt)
+        set align(center)
+        counter(page).display()
+      },
+    )
     if it.numbering != none {
       set text(size: 20pt)
       align(
@@ -46,7 +44,9 @@
         if it.element.numbering != none {
           it.element.supplement + [ ]
           numbering(it.element.numbering, ..it.element.counter.at(it.element.location()))
-        } + [ --- ] + it.element.body,
+        }
+          + [ --- ]
+          + it.element.body,
       )
 
       res += h(1fr)
@@ -65,8 +65,6 @@
   }
 
   let chapters-and-headings = figure.where(kind: "parte", outlined: true).or(heading.where(outlined: true))
-
-  pagebreak()
 
   outline(indent: auto, target: chapters-and-headings)
 
