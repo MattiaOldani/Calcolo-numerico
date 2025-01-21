@@ -20,13 +20,7 @@
 
   show figure.where(kind: "parte"): it => {
     counter(heading).update(0)
-    set page(
-      footer: {
-        set text(weight: "regular", size: 11pt)
-        set align(center)
-        counter(page).display()
-      },
-    )
+    set page(footer: { })
     if it.numbering != none {
       set text(size: 20pt)
       align(

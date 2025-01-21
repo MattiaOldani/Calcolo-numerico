@@ -35,6 +35,8 @@
 #include "capitoli/teoria/08_sistemi_di_equazioni_differenziali_ordinarie.typ"
 #pagebreak()
 
+#include "capitoli/teoria/09_come_fare_esercizi.typ"
+
 // Laboratorio
 
 #parte("Laboratorio")
