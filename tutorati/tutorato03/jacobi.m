@@ -20,7 +20,7 @@ x = new_x;
 nit = it;
 
 if it == nitmax && err > toll
-    disp("Jacobi non coverge.");
+    disp("Jacobi non converge.");
 end
 
 return

@@ -20,7 +20,7 @@ x = new_x;
 nit = it;
 
 if it == nitmax && err > toll
-    disp("Gauss-Seidel non coverge.");
+    disp("Gauss-Seidel non converge.");
 end
 
 return
