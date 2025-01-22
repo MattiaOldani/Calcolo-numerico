@@ -19,6 +19,6 @@ Abbiamo tre *formule di quadratura* per approssimare un integrale:
 
 La prima e la terza formula sono state date come esercizio in classe. La formula dei trapezi composta è implementata in Matlab con la funzione *`trapz(x,y)`*.
 
-(????) la formula dei trapezi semplice equivale a integrare la retta interpolante della funzione integranda negli estremi dell'intervallo. La formula dei trapezi composita equivale a integrare la spline lineare della funzione integranda nei punti di quadratura. (????)
+(????) La formula dei trapezi semplice equivale a integrare la retta interpolante della funzione integranda negli estremi dell'intervallo. La formula dei trapezi composita equivale a integrare la spline lineare della funzione integranda nei punti di quadratura. (????)
 
 Per le formule del punto medio e dei trapezi l'errore commesso è $O(H^2)$, mentre per la formula di Cavalieri-Simpson l'errore commesso è $O(H^4)$.

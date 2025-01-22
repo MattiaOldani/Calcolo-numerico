@@ -85,7 +85,7 @@ Per calcolare l'*inversa* di una matrice quadrata abbiamo la funzione *`inv(M)`*
 
 Abbiamo anche qua nelle matrici due *norme*:
 - *norma 1*, calcolabile con *`norm(A,1)`* e definita da $ norm(A)_1 = max_(j = 1, dots, n) sum_(i=1)^n abs(a_(i j)) . $ Si può calcolare anche con *`max(sum(abs(A)))`*;
-- *norma infinito* (_norma massima (????)_), calcolabile con *`norm(v,inf)`* e definita da $ norm(A)_infinity = max_(i = 1, dots, n) sum_(j=1)^n abs(a_(i j)) . $ Si può calcolare anche con *`max(sum(abs(A')))`*.
+- *norma infinito* (_norma massima_), calcolabile con *`norm(v,inf)`* e definita da $ norm(A)_infinity = max_(i = 1, dots, n) sum_(j=1)^n abs(a_(i j)) . $ Si può calcolare anche con *`max(sum(abs(A')))`*.
 
 Vediamo infine tre funzioni che manipolano matrici.
 
