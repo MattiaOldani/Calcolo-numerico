@@ -55,7 +55,7 @@ Il *metodo di Newton* segue i seguenti passi:
 Questo è l'algoritmo _"formale"_ per il metodo di Newton. Vediamo quello più _"applicato"_:
 + sia $x_0$ un punto;
 + per ogni $k gt.eq 1$ eseguo:
-  + calcolo $x_k = x_(k-1) - frac(f(x_0), f'(x_0))$
+  + calcolo $x_k = x_(k-1) - frac(f(x_(k-1)), f'(x_(k-1)))$
   + ricomincio dal punto $2.1$.
 
 Sia $r_(k-1)(x)$ la retta tangente in $x_(k-1)$. La sua definizione analitica è la seguente: $ r_(k-1)(x) = f'(x_(k-1)) (x - x_(k-1)) + f(x_(k-1)) . $
