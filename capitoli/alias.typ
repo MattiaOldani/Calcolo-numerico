@@ -1,3 +1,6 @@
+// Setup
+
+
 // Alias
 
 // Aritmetica floating point
@@ -11,6 +14,7 @@
 }
 
 #let eps = "eps"
+
 
 // Matrici e vettori
 
@@ -37,6 +41,7 @@
   )
   $lengthop(#x)$
 }
+
 
 // Sistemi lineari
 

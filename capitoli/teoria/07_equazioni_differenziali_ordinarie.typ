@@ -3,6 +3,7 @@
 #import "@local/typst-theorems:1.0.0": *
 #show: thmrules.with(qed-symbol: $square.filled$)
 
+
 // Capitolo
 
 = Metodi numerici per equazioni differenziali ordinarie
@@ -33,11 +34,11 @@ Nel caso di Eulero implicito ad ogni passo dobbiamo risolvere un'equazione non l
 
 == Metodo di Crank-Nicolson
 
-Il *metodo di Crank-Nicolson* ha una sola versione: posto $u_0 = y_0$ allora $ forall n gt.eq 0 quad u_(n+1) = u_n + h/2 (f(t_n,u_n) + f(t_(n+1), u_(n+1))) . $
+Il *metodo di Crank-Nicolson* ha una sola versione: posto $u_0 = y_0$ allora $ forall n gt.eq 0 quad u_(n+1) = u_n + h / 2 (f(t_n,u_n) + f(t_(n+1), u_(n+1))) . $
 
 == Metodo di Heun
 
-Il *metodo di Heun* ha una sola versione: posto $u_0 = y_0$ allora $forall n gt.eq 0$ calcolo $ u^*_(n+1) &= u_n + h f(t_n, u_n) \ u_(n+1) &= u_n + h/2 (f(t_n, u_n) + f(t_(n+1), u^*_(n+1))) . $
+Il *metodo di Heun* ha una sola versione: posto $u_0 = y_0$ allora $forall n gt.eq 0$ calcolo $ u^*_(n+1) &= u_n + h f(t_n, u_n) \ u_(n+1) &= u_n + h / 2 (f(t_n, u_n) + f(t_(n+1), u^*_(n+1))) . $
 
 == Consistenza, convergenza e stabilità
 
@@ -68,7 +69,7 @@ Consideriamo ora il problema modello $ cases(frac(d y(t), d t) = - lambda y(t) q
 Un metodo numerico è detto *assolutamente stabile* se, applicato al problema modello, allora $ u_n arrow 0 quad "se" t_n arrow infinity . $
 
 Vediamo che proprietà hanno i metodi che abbiamo visto:
-- Eulero esplicito è assolutamente stabile se e solo se $h < 2/lambda$;
+- Eulero esplicito è assolutamente stabile se e solo se $h < 2 / lambda$;
 - Eulero implicito è incondizionatamente assolutamente stabile;
-- Heun è assolutamente stabile se e solo se $h < 2/lambda$;
+- Heun è assolutamente stabile se e solo se $h < 2 / lambda$;
 - Crank-Nicolson è incondizionatamente assolutamente stabile.

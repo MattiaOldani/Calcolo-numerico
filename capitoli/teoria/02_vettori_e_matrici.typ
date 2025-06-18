@@ -5,6 +5,7 @@
 #import "@local/typst-theorems:1.0.0": *
 #show: thmrules.with(qed-symbol: $square.filled$)
 
+
 // Capitolo
 
 = Vettori e matrici
@@ -49,7 +50,7 @@ Diciamo che l'applicazione $ norm(dot) : RR^n arrow.long RR^+ union {0} $ è una
 
 Le norme più famose sono:
 - *norma 1*, essa è tale che $ norm(x)_1 = sum_(i=1)^n abs(x_i) quad forall x in RR^n ; $
-- *norma euclidea* (_norma 2_), essa è tale che $ norm(x)_2 = (sum_(i=1)^n x_i^2 )^(1/2) quad forall x in RR^n ; $
+- *norma euclidea* (_norma 2_), essa è tale che $ norm(x)_2 = (sum_(i=1)^n x_i^2 )^(1 / 2) quad forall x in RR^n ; $
 - *norma* $infinity$ (_norma del massimo_), essa è tale che $ norm(x)_infinity = max_(1 lt.eq i lt.eq n) abs(x_i) quad forall x in RR^n . $
 
 == Matrici
@@ -125,15 +126,15 @@ Sia $A$ una matrice quadrata di ordine $n$. Si dice che $A$ è *invertibile* se 
 ]
 
 #theorem()[
-  Sia $A$ una matrice quadrata di ordine due, cioè $ A = mat(a_11, a_12; a_21, a_22) $ e supponiamo $det(A) eq.not 0$. Allora $ A^(-1) = 1/det(A) mat(a_22, -a_12; -a_21, a_11) . $
+  Sia $A$ una matrice quadrata di ordine due, cioè $ A = mat(a_11, a_12; a_21, a_22) $ e supponiamo $det(A) eq.not 0$. Allora $ A^(-1) = 1 / det(A) mat(a_22, -a_12; -a_21, a_11) . $
 ]
 
-Sia $A$ una matrice $m times n$ e $k in NN$ con $k lt.eq min(m,n)$. Si chiama *minore* di ordine $k$ estratto da $A$ il determinante di una qualunque sottomatrice quadrata di ordine $k$ di $A$, ottenuta prendendo gli elementi comuni a $k$ righe di $k$ colonne di $A$. Si chiama *caratteristica o rango* di $A$ ($rank(A)$) l'ordine massimo dei minori non nulli che si possono estrarre da $A$.
+Sia $A$ una matrice $m times n$ e $k in NN$ con $k lt.eq min(m, n)$. Si chiama *minore* di ordine $k$ estratto da $A$ il determinante di una qualunque sottomatrice quadrata di ordine $k$ di $A$, ottenuta prendendo gli elementi comuni a $k$ righe di $k$ colonne di $A$. Si chiama *caratteristica o rango* di $A$ ($rank(A)$) l'ordine massimo dei minori non nulli che si possono estrarre da $A$.
 
 In altre parole, $rank(A) = r$ se esiste un minore di ordine $r$ diverso da zero e se tutti i minori di ordine $r+1$ sono nulli.
 
 Osserviamo due fatti. Sia $A$ una matrice $m times n$ non nulla, allora:
 - $rank(A) gt.eq 1$;
-- $rank(A) lt.eq min(m,n)$.
+- $rank(A) lt.eq min(m, n)$.
 
-In poche parole $ 1 lt.eq rank(A) lt.eq min(m,n) . $
+In poche parole $ 1 lt.eq rank(A) lt.eq min(m, n) . $

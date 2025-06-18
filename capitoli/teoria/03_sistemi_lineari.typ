@@ -5,6 +5,7 @@
 #import "@local/typst-theorems:1.0.0": *
 #show: thmrules.with(qed-symbol: $square.filled$)
 
+
 // Capitolo
 
 = Sistemi lineari
@@ -78,7 +79,7 @@ Il MEG durante la sua applicazione costruisce una fattorizzazione della matrice 
 
 La fattorizzazione sopra citata è detta *fattorizzazione LU* e una volta calcolata il sistema lineare $A x = b$ può essere scritto come $L U x = b$ e può essere risolto in due step:
 - $L y = b$ sistema triangolare inferiore (_sostituzioni in avanti_);
-- $U x  = y$ sistema triangolare superiore (_sostituzioni all'indietro_).
+- $U x = y$ sistema triangolare superiore (_sostituzioni all'indietro_).
 
 Il vantaggio che offre questa fattorizzazione è quello di risolvere sistemi triangolari che costano meno del MEG.
 
@@ -104,7 +105,7 @@ Con questa fattorizzazione trasformiamo il sistema $A x = b$ nel sistema $R^T R 
 + $R^T y = b$ sistema triangolare inferiore (_sostituzioni in avanti_);
 + $R x = y$ sistema triangolare superiore (_sostituzioni all'indietro_).
 
-Se si devono risolvere più sistemi lineari con la stessa matrice $A$, conviene applicare la fattorizzazione di Cholesky per risolvere dei sistemi triangolari che costano meno del MEG. Inoltre, il tempo di calcolo della fattorizzazione è $approx 1/3 n^3$, che è la metà della fattorizzazione LU ($approx 2/3 n^3$).
+Se si devono risolvere più sistemi lineari con la stessa matrice $A$, conviene applicare la fattorizzazione di Cholesky per risolvere dei sistemi triangolari che costano meno del MEG. Inoltre, il tempo di calcolo della fattorizzazione è $approx 1 / 3 n^3$, che è la metà della fattorizzazione LU ($approx 2 / 3 n^3$).
 
 == Metodi iterativi per sistemi lineari
 
@@ -169,7 +170,7 @@ Gli autovalori di $B_j$ sono i $lambda$ tali che $ det(lambda D - E - F) = 0 . $
 
 Come prima, isoliamo l'$i$-esima incognita nell'$i$-esima equazione e partiamo da un vettore iniziale $x^((0))$. Il metodo di Gauss-Seidel calcola tutte le incognite $x_i^((k+1))$ utilizzando $x_j^((k+1)) quad forall j < i$, altrimenti utilizza $x_t^((k)) quad forall t gt.eq i$.
 
-L'iterazione generica del metodo di Gauss-Seidel, dato il sistema lineare $A x  = b$ con $A in RR^(n times n)$ è $ x_i^((k+1)) = 1 / a_(i i) (b_i - sum_(j=1)^(i-1) a_(i j) x_j^((k+1)) - sum_(j=i+1)^n a_(i j) x_j^((k))) quad i = 1, dots, n . $
+L'iterazione generica del metodo di Gauss-Seidel, dato il sistema lineare $A x = b$ con $A in RR^(n times n)$ è $ x_i^((k+1)) = 1 / a_(i i) (b_i - sum_(j=1)^(i-1) a_(i j) x_j^((k+1)) - sum_(j=i+1)^n a_(i j) x_j^((k))) quad i = 1, dots, n . $
 
 Come prima, dividiamo $A$ nelle matrici $D,E,F$. Chiamiamo *matrice di iterazione di Gauss-Seidel* la matrice $ B_(g s) = (D - E)^(-1) F . $ Si può verificare che questo metodo si scrive in forma compatta come $ x^((k+1)) = B_(g s) x^((k)) + (D - E)^(-1) b . $
 

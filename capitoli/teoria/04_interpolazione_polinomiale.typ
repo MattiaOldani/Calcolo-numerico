@@ -5,6 +5,7 @@
 #import "@local/typst-theorems:1.0.0": *
 #show: thmrules.with(qed-symbol: $square.filled$)
 
+
 // Capitolo
 
 = Interpolazione polinomiale
@@ -21,7 +22,7 @@ Per risolvere questo problema scriviamo il generico polinomio di grado $N$ e imp
   Dati $N+1$ punti distinti $x_0, dots, x_N$ e $N+1$ corrispondenti valori $y_0, dots, y_N$, esiste uno e un solo polinomio interpolatore $P_N (x)$ di grado $N$ tale che $ P_N (x_i) = y_i quad forall i = 0, dots, N . $
 ]
 
-#proof()[
+#theorem-proof()[
   Assumiamo per assurdo che esistano due polinomi $P_N (x)$ e $Q_N (x)$ in $PP_N$ tali che $ P_N (x_i) = Q_N (x_i) = y_i quad forall i = 0, dots, N . $ Ma allora $P_N (x) - Q_N (x) in PP_N$ e $P_N (x_i) - Q_N (x_i) = 0 quad forall i = 0, dots, N$, cioè quel polinomio si annulla in $N+1$ punti distinti.
 
   Questo implica che $P_N (x) - Q_N (x) = 0 quad forall x in RR$ perché per il teorema fondamentale dell'algebra, l'unico polinomio di grado $N$ che si annulla in $N+1$ punti distinti è il polinomio banale identicamente nullo, quindi $P_N (x) = Q_N (x)$ e quindi $P_N (x)$ è unico.
@@ -75,7 +76,7 @@ Una funzione che ha questo comportamento è il *controesempio di Runge*, ovvero 
 
 Una soluzione è utilizzare i *nodi di Chebishev*, definiti:
 - sull'intervallo $[-1,1]$ da $ x_i = cos(pi frac(2i + 1, 2(N+1))) quad i = 0, dots, N ; $
-- sul generico intervallo $[a,b]$ da $ x_i = frac(a+b,2) + (b-a,2) cos(pi frac(2i + 1, 2(N+1))) quad i = 0, dots, N . $
+- sul generico intervallo $[a,b]$ da $ x_i = frac(a+b, 2) + (b-a,2) cos(pi frac(2i + 1, 2(N+1))) quad i = 0, dots, N . $
 
 == Retta di regressione
 
@@ -99,5 +100,5 @@ La possiamo vedere come una _funzione a tratti_ formata da $N$ funzioni lineari,
 Consideriamo una funzione $f : RR arrow.long RR$ e $N+1$ punti $(x_i,y_i) i = 0, dots, N$ con $f(x_i) = y_i$. Sia $S^1 (x)$ la spline lineare che interpola i punti $(x_i,y_i)$. Dato $x in RR$ chiamiamo *errore di interpolazione* nel punto $x$ la quantità $ abs(f(x) - S^1 (x)) . $
 
 #theorem()[
-  Sia $f in C^2 ([a,b])$, allora $ max_(x in [a,b]) abs(f(x) - S^1 (x)) lt.eq 1/8 h^2 max_(x in [a,b]) abs(f^((2)) (x)) , $ con $ h = max_(0 lt.eq i lt.eq N-1) (x_(i+1) - x_i) . $
+  Sia $f in C^2 ([a,b])$, allora $ max_(x in [a,b]) abs(f(x) - S^1 (x)) lt.eq 1 / 8 h^2 max_(x in [a,b]) abs(f^((2)) (x)) , $ con $ h = max_(0 lt.eq i lt.eq N-1) (x_(i+1) - x_i) . $
 ]

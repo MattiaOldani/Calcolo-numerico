@@ -3,6 +3,7 @@
 #import "@local/typst-theorems:1.0.0": *
 #show: thmrules.with(qed-symbol: $square.filled$)
 
+
 // Capitolo
 
 = Integrazione numerica
@@ -23,13 +24,13 @@ Si chiama *grado di precisione* di una formula di quadratura il massimo intero $
 
 === Formula del punto medio
 
-La *formula del punto medio* si ottiene scegliendo il polinomio di grado $0$ che interpola $f(x)$ nel punto medio dell'intervallo $[a,b]$, cioè $ I^tilde_(P M) (f) := (b-a) f(frac(a+b,2)) . $
+La *formula del punto medio* si ottiene scegliendo il polinomio di grado $0$ che interpola $f(x)$ nel punto medio dell'intervallo $[a,b]$, cioè $ I^tilde_(P M) (f) := (b-a) f(frac(a+b, 2)) . $
 
 Abbiamo quindi:
-- un nodo di quadratura $x_1 = frac(a+b,2)$;
+- un nodo di quadratura $x_1 = frac(a+b, 2)$;
 - un peso di quadratura $alpha_1 = b-a$.
 
-In poche parole, stiamo approssimando l'integrale con un rettangolo di base $b-a$ e altezza $f(frac(a+b,2))$.
+In poche parole, stiamo approssimando l'integrale con un rettangolo di base $b-a$ e altezza $f(frac(a+b, 2))$.
 
 Si dimostra che l'errore di questa formula è $ I(f) - I^tilde_(P M) (f) = frac((b-a)^3, 24) f^((2)) (t) quad t in (a,b) $ se $f in C^2 ([a,b])$.
 
@@ -42,7 +43,7 @@ Vista questa dimostrazione, la formula del punto medio ha grado di precisione $1
 
 === Formula del trapezio
 
-La *formula del trapezio* si ottiene scegliendo il polinomio di grado $1$ che interpola $f(x)$ negli estremi dell'intervallo $[a,b]$, cioè $ I^tilde_T (f) := frac(b-a,2) (f(a) + f(b)) . $
+La *formula del trapezio* si ottiene scegliendo il polinomio di grado $1$ che interpola $f(x)$ negli estremi dell'intervallo $[a,b]$, cioè $ I^tilde_T (f) := frac(b-a, 2) (f(a) + f(b)) . $
 
 Abbiamo quindi:
 - due nodi di quadratura $x_1 = a$ e $x_2 = b$;
@@ -56,11 +57,11 @@ Non lo dimostriamo, ma la formula del trapezio ha grado di precisione $1$.
 
 === Formula di Cavalieri-Simpson
 
-La *formula di Cavalieri-Simpson* si ottiene scegliendo il polinomio di grado $2$ che interpola $f(x)$ negli estremi e nel punto medio dell'intervallo $[a,b]$, ovvero $ I^tilde_(C S) (f) := frac(b-a, 6) (f(a) + 4 f(frac(a+b,2)) + f(b)) . $
+La *formula di Cavalieri-Simpson* si ottiene scegliendo il polinomio di grado $2$ che interpola $f(x)$ negli estremi e nel punto medio dell'intervallo $[a,b]$, ovvero $ I^tilde_(C S) (f) := frac(b-a, 6) (f(a) + 4 f(frac(a+b, 2)) + f(b)) . $
 
 Abbiamo quindi:
-- tre nodi di quadratura $x_1 = a$, $x_2 = frac(a+b,2)$ e $x_3 = b$;
-- due pesi di quadratura $alpha_1 = alpha_3 = frac(b-a,6)$ e $alpha_2 = frac(2 (b-a), 3)$.
+- tre nodi di quadratura $x_1 = a$, $x_2 = frac(a+b, 2)$ e $x_3 = b$;
+- due pesi di quadratura $alpha_1 = alpha_3 = frac(b-a, 6)$ e $alpha_2 = frac(2 (b-a), 3)$.
 
 In poche parole, stiamo approssimando l'integrale con un parabola che passa negli estremi e nel punto medio dell'intervallo $[a,b]$.
 
@@ -90,15 +91,15 @@ L'errore nella _formula asintotica_ è $ I(f) - I^tilde(C)_(P M) (f) = H^2 / 24 
 
 === Formula del trapezio composita
 
-La *formula del trapezio composita* approssima con la formula $ I^tilde(C)_T (f) = sum_(i=1)^M H/2 (f(a_(i-1)) + f(a_i)) . $
+La *formula del trapezio composita* approssima con la formula $ I^tilde(C)_T (f) = sum_(i=1)^M H / 2 (f(a_(i-1)) + f(a_i)) . $
 
-L'errore nella _formula classica_ è $ I(f) - I^tilde(C)_T = -frac(b-a,12) H^2 f^((2)) (eta) quad eta in (a,b) . $
+L'errore nella _formula classica_ è $ I(f) - I^tilde(C)_T = -frac(b-a, 12) H^2 f^((2)) (eta) quad eta in (a,b) . $
 
 L'errore nella _formula asintotica_ è $ I(f) - I^tilde(C)_T = -H^2 / 12 (f'(b) - f'(a)) quad eta in (a,b) . $
 
 === Formula di Cavalieri-Simpson composita
 
-La *formula di Cavalieri-Simpson composita* approssima con la formula $ I^tilde(C)_(C S) = sum_(i=1)^M H/6 (f(a_(i-1)) + 4 f(frac(a_(i-1) + a_i, 2)) + f(a_i)) . $
+La *formula di Cavalieri-Simpson composita* approssima con la formula $ I^tilde(C)_(C S) = sum_(i=1)^M H / 6 (f(a_(i-1)) + 4 f(frac(a_(i-1) + a_i, 2)) + f(a_i)) . $
 
 L'errore nella _formula classica_ è $ I(f) - I^tilde(C)_(C S) = - frac(b-a, 2880) H^4 f^((4)) (eta) quad eta in (a,b) . $
 

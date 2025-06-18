@@ -2,6 +2,7 @@
 
 #import "../alias.typ": *
 
+
 // Capitolo
 
 = Problemi matematici e metodi numerici
@@ -59,7 +60,7 @@ Questo insieme è definito da:
 - $e$ _esponente_ tale che $L lt.eq e lt.eq U$, con $L < 0$ e $U > 0$;
 - $t$ numero di _cifre significative_;
 - $a_1 eq.not 0$ e $0 lt.eq a_i lt.eq beta - 1$;
-- $m = (.a_1 a_2 dots a_t)_beta = a_1 / beta + a_2 / beta^2 + dots + a^t / beta^t$ _mantissa_.
+- $m = (.a_1 a_2 dots a_t)_beta = a_1 / beta + a_2 / beta^2 + dots + a_t / beta^t$ _mantissa_.
 
 Vediamo una serie di osservazioni:
 - $abs(float(x)) in [beta^(L-1), (1-beta^(-t))beta^U]$;
@@ -72,8 +73,8 @@ Preso il numero reale $ x = sigma (.a_1 a_2 dots a_t a_(t+1) a_(t+2))_beta beta^
 - se $e > U$ allora si ha *overflow*, ovvero $float(x) = infinity$;
 - se $exists i > t bar.v a_i eq.not 0$ allora ho due casi:
   - *troncamento*: $ float(x) = sigma (.a_1 a_2 dots a_t)_beta beta^e ; $
-  - *arrotondamento*: $ sigma (cases((.a_1 a_2 dots a_t)_beta beta^e & "se" 0 lt.eq a_(t+1) < beta/2, (.a_1 a_2 dots (a_t + 1))_beta beta^e quad & "se" beta/2 lt.eq a_(t+1) lt.eq beta - 1)) . $
+  - *arrotondamento*: $ sigma (cases((.a_1 a_2 dots a_t)_beta beta^e & "se" 0 lt.eq a_(t+1) < beta / 2, (.a_1 a_2 dots (a_t + 1))_beta beta^e quad & "se" beta / 2 lt.eq a_(t+1) lt.eq beta - 1)) . $
 
-Si può dimostrare che l'errore commesso approssimando un numero reale $x$ con la sua rappresentazione macchina $float(x)$ è maggiorato da $ abs(frac(float(x) - x, x)) lt.eq k beta^(1-t) , $ con $k=1$ per troncamento e $k=1/2$ per arrotondamento.
+Si può dimostrare che l'errore commesso approssimando un numero reale $x$ con la sua rappresentazione macchina $float(x)$ è maggiorato da $ abs(frac(float(x) - x, x)) lt.eq k beta^(1-t) , $ con $k=1$ per troncamento e $k=1 / 2$ per arrotondamento.
 
 La quantità $ eps = k beta^(1-t) $ è detta *precisione macchina* nel fissato sistema floating point. La precisione si può caratterizzare come il più piccolo numero macchina per cui vale $ float(1 + eps) > 1 . $
