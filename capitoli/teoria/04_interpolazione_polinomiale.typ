@@ -76,7 +76,7 @@ Una funzione che ha questo comportamento è il *controesempio di Runge*, ovvero 
 
 Una soluzione è utilizzare i *nodi di Chebishev*, definiti:
 - sull'intervallo $[-1,1]$ da $ x_i = cos(pi frac(2i + 1, 2(N+1))) quad i = 0, dots, N ; $
-- sul generico intervallo $[a,b]$ da $ x_i = frac(a+b, 2) + (b-a,2) cos(pi frac(2i + 1, 2(N+1))) quad i = 0, dots, N . $
+- sul generico intervallo $[a,b]$ da $ x_i = frac(a+b, 2) + frac(b-a,2) cos(pi frac(2i + 1, 2(N+1))) quad i = 0, dots, N . $
 
 == Retta di regressione
 
