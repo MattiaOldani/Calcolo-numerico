@@ -49,7 +49,8 @@ In pratica sono tutti polinomi $L_i$ che si annullano in tutti i valori che non 
 
 Ogni polinomio è quindi nella forma $ L_i (x) = product_(j = 0 and j eq.not i)^N frac(x - x_j, x_i - x_j) = frac((x - x_0) dot dots dot (x - x_(i-1)) dot (x - x_(i+1)) dot dots dot (x - x_N), (x_i - x_0) dot dots dot (x_i - x_(i-1)) dot (x_i - x_(i+1)) dot dots dot (x_i - x_N)) . $
 
-Il polinomio interpolatore è dato da $ P_N (x) = sum_(i=0)^N y_i L_i (x) . $ Infatti, $forall k = 0, dots, N$ vale $ P_N (x_k) = sum_(i=0)^N L_i (x_k) &= y_0 L_0 (x_k) + dots + y_k L_k (x_k) + dots + y_N L_N (x_k) = \ &= 0 + dots + y_k dot 1 + dots + 0 = y_k . $
+Il polinomio interpolatore è dato da $ P_N (x) = sum_(i=0)^N y_i L_i (x) . $ Infatti, $forall k = 0, dots, N$ vale $ P_N (x_k) = sum_(i=0)^N L_i (x_k) & = y_0 L_0 (x_k) + dots + y_k L_k (x_k) + dots + y_N L_N (x_k) = \
+                                  & = 0 + dots + y_k dot 1 + dots + 0 = y_k . $
 
 === Errore di interpolazione
 
@@ -76,7 +77,7 @@ Una funzione che ha questo comportamento è il *controesempio di Runge*, ovvero 
 
 Una soluzione è utilizzare i *nodi di Chebishev*, definiti:
 - sull'intervallo $[-1,1]$ da $ x_i = cos(pi frac(2i + 1, 2(N+1))) quad i = 0, dots, N ; $
-- sul generico intervallo $[a,b]$ da $ x_i = frac(a+b, 2) + frac(b-a,2) cos(pi frac(2i + 1, 2(N+1))) quad i = 0, dots, N . $
+- sul generico intervallo $[a,b]$ da $ x_i = frac(a+b, 2) + frac(b-a, 2) cos(pi frac(2i + 1, 2(N+1))) quad i = 0, dots, N . $
 
 == Retta di regressione
 
@@ -84,7 +85,7 @@ Dati $N+1$ punti $(x_i, y_i) quad i = 0, dots, N$ dove eventualmente $y_i = f(x_
 
 Diciamo che $R(x)$ approssima l'insieme dei dati *nel senso dei minimi quadrati* e questa retta è la *retta dei minimi quadrati* o *retta di regressione*.
 
-Il minimo della funzione $E(a_0,a_1)$ si ottiene imponendo le condizioni $ cases(frac(diff E(a_0,a_1), diff a_0) = 0, frac(diff E(a_0,a_1), diff a_1) = 0) . $ Svolgendo i conti abbiamo $ cases(sum_(i=0)^N 2(y_i - a_0 - a_1 x_i)(-1) = 0, sum_(i=0)^N 2(y_i - a_0 - a_1 x_1)(-x_i) = 0) . $ Dobbiamo quindi risolvere il sistema lineare $ cases((N+1) a_0 + (sum_(i=0)^N x_i) a_1 = sum_(i=0)^N y_i, (sum_(i=0)^N x_i) a_0 + (sum_(i=0)^N x_i^2) a_1 = sum_(i=0)^N x_i y_i) . $ Tale sistema è detto *sistema delle equazioni normali*.
+Il minimo della funzione $E(a_0,a_1)$ si ottiene imponendo le condizioni $ cases(frac(partial E(a_0,a_1), partial a_0) = 0, frac(partial E(a_0,a_1), partial a_1) = 0) . $ Svolgendo i conti abbiamo $ cases(sum_(i=0)^N 2(y_i - a_0 - a_1 x_i)(-1) = 0, sum_(i=0)^N 2(y_i - a_0 - a_1 x_1)(-x_i) = 0) . $ Dobbiamo quindi risolvere il sistema lineare $ cases((N+1) a_0 + (sum_(i=0)^N x_i) a_1 = sum_(i=0)^N y_i, (sum_(i=0)^N x_i) a_0 + (sum_(i=0)^N x_i^2) a_1 = sum_(i=0)^N x_i y_i) . $ Tale sistema è detto *sistema delle equazioni normali*.
 
 == Spline lineare
 

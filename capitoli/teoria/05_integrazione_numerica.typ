@@ -35,7 +35,8 @@ In poche parole, stiamo approssimando l'integrale con un rettangolo di base $b-a
 Si dimostra che l'errore di questa formula è $ I(f) - I^tilde_(P M) (f) = frac((b-a)^3, 24) f^((2)) (t) quad t in (a,b) $ se $f in C^2 ([a,b])$.
 
 Questa formula ha grado di precisione $1$:
-- se $k = 0$ allora $f(x) = x^0 = 1$ e quindi $ I(f) = I(1) = integral_a^b 1 d x &= b - a \ I^tilde_(P M) (f) = I^tilde_(P M) (1) = (b - a) underbracket(f(frac(a + b, 2)), "funzione banale") &= b - a ; $
+- se $k = 0$ allora $f(x) = x^0 = 1$ e quindi $                                                                   I(f) = I(1) = integral_a^b 1 d x & = b - a \
+  I^tilde_(P M) (f) = I^tilde_(P M) (1) = (b - a) underbracket(f(frac(a + b, 2)), "funzione banale") & = b - a ; $
 - se $k = 1$ allora $f(x) = x^1 = x$ e quindi $ I(f) = I(x) = integral_a^b x d x &= frac(b^2 - a^2, 2) \ I^tilde_(P M) (f) = I^tilde_(P M) (x) = (b - a) underbracket(f(frac(a + b, 2)), "identità") = (b - a) frac(a + b, 2) &= frac(b^2 - a^2, 2) ; $
 - se $k = 2$ allora $f(x) = x^2$ e quindi $ I(f) = I(x^2) = integral_a^b x^2 d x &= frac(b^3 - a^3, 3) \ I^tilde_(P M) (f) = I^tilde_(P M) (x^2) = (b - a) underbracket(f(frac(a + b, 2)), "quadrato") = (b - a) frac((a + b)^2, 4) &= frac(a^2 b + b^3 + 2 a b^2 - a^3 - a b^2 - 2 a^2 b, 4) . $
 

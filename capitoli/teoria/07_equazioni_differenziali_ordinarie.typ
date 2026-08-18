@@ -38,7 +38,8 @@ Il *metodo di Crank-Nicolson* ha una sola versione: posto $u_0 = y_0$ allora $ f
 
 == Metodo di Heun
 
-Il *metodo di Heun* ha una sola versione: posto $u_0 = y_0$ allora $forall n gt.eq 0$ calcolo $ u^*_(n+1) &= u_n + h f(t_n, u_n) \ u_(n+1) &= u_n + h / 2 (f(t_n, u_n) + f(t_(n+1), u^*_(n+1))) . $
+Il *metodo di Heun* ha una sola versione: posto $u_0 = y_0$ allora $forall n gt.eq 0$ calcolo $ u^*_(n+1) & = u_n + h f(t_n, u_n) \
+  u_(n+1) & = u_n + h / 2 (f(t_n, u_n) + f(t_(n+1), u^*_(n+1))) . $
 
 == Consistenza, convergenza e stabilità
 
